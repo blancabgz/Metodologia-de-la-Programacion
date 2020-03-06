@@ -10,23 +10,31 @@ using namespace std;
 
 int main(){
   int tam,tam2,tam_aux,k;
-  cout << "¿Cuántos números quiere introducir en la primera cadena?";
+  cout << "¿Cuántos números quiere introducir en la primera cadena? ";
   cin >> tam;
   double vector1[tam];
   introducirValores(vector1,tam);
-  cout << "¿Cuántos números quiere introducir en la segunda cadena?";
+  cout << "¿Cuántos números quiere introducir en la segunda cadena? ";
   cin >> tam2;
   double vector2[tam2];
   tam_aux = tam + tam2;
   double vectorAux[tam_aux];
   introducirValores(vector2,tam2);
+  cout << endl;
+  cout << "------------- VECTORES INTRODUCIDOS -------------" << endl;
+  for(int b=0; b<tam; b++){
+    cout << " " << vector1[b] << " ";
+  }
+  cout << endl;
+  for(int a=0; a<tam2; a++){
+    cout << " " << vector2[a] << " ";
+  }
+
+
   mezcla(vector1,tam,vector2,tam2,vectorAux);
   ordenar(vectorAux,tam_aux);
-cout << "------- VECTOR ORDENADO PERO REPETIDO --------- " << endl;
-  for(int i = 0; i < tam_aux; i++){
-     cout << vectorAux[i] << endl;
- }
- cout << "------- VECTOR ORDENADO -------------" << endl;
+  cout << endl;
+  cout << "------------- VECTOR ORDENADO -------------" << endl;
   double vector_sin_repetir[tam_aux];
   int j = 0;
   for(int i=0; i<tam_aux-1;i++){
@@ -39,6 +47,7 @@ cout << "------- VECTOR ORDENADO PERO REPETIDO --------- " << endl;
   tam_aux = j+1;
 
   for(int z=0; z<tam_aux;z++){
-    cout << vector_sin_repetir[z] << endl;
+    cout << " " <<vector_sin_repetir[z] << " ";
   }
+  cout << endl;
 }
