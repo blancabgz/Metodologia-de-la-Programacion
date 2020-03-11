@@ -1,6 +1,23 @@
 /**
 BLANCA ABRIL GONZÁLEZ GRUPO E3
-Ejercicio 2
+Ejercicio 2:
+
+Programe una función llamada combinarSuma que reciba como argumento dos
+vectores C de tipo Valor y produce como resultado otro vector del mismo tipo.
+
+Es decir, cada objeto de la clase Valor se usa para indicar una posición de una
+matriz, caracterizada por la fila y columna en que se encuentra y el valor almacenado
+en dicha posición. El resultado obtenido debe cumplir las siguientes caracterı́sticas:
+
+• si un objeto de la clase Valor aparece en un único vector de entrada, entonces se
+almacena directamente en el vector de salida, en la posición que le corresponda
+• si en ambos vectores hay dos objetos de clase Valor que se refieren a una misma
+posición (tienen el mismo valor para fila y columna), entonces el objeto a alma-
+cenar en el vector de salida tendrá el mismo valor para estos dos datos miembro,
+pero el valor para el dato miembro valor se obtendrá de la suma de este dato en
+ambos objetos
+• pueden usarse funciones auxiliares si se considera oportuno
+
 **/
 
 #include <iostream>
