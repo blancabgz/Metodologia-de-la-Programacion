@@ -1,9 +1,9 @@
-#include "../include/utilidades.h"
+#include "utilidades.h"
 #include <iostream>
 using namespace std;
 
 void introducirValores(double array[], int tam){
-  int valor;
+  double valor;
   for(int i=0; i<tam; i++){
     cout << "Intruduce un valor: ";
     cin >> valor;

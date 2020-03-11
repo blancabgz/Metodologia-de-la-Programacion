@@ -4,7 +4,7 @@ Blanca Abril Gonzalez
 
 
 #include <iostream>
-#include "../include/utilidades.h"
+#include "utilidades.h"
 using namespace std;
 
 
