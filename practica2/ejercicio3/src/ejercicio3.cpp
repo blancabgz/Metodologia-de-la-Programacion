@@ -9,7 +9,6 @@ using namespace std;
 
 int main(){
   int tam1;
-  int *ptr = NULL;
   cout << "Introduce el numero de elementos que va a introducir: " ;
   cin >> tam1;
   double vector_inicio[tam1];
@@ -17,7 +16,6 @@ int main(){
   introducirValores(vector_inicio,tam1);
   mostrarDatos(vector_inicio,tam1);
   ordenarDatos(vector_inicio,tam1);
-  ptr = &tam1;
-  eliminarRepetidos(vector_inicio,&tam1,vector_final);
+  eliminarRepetidos(vector_inicio,tam1,vector_final);
   mostrarDatos(vector_final,tam1);
 }

@@ -38,14 +38,14 @@ void ordenarDatos(double array[], int tam){
     }
 }
 
-void eliminarRepetidos(double arrayinicio[], int *tam1, double arrayfin[]){
+void eliminarRepetidos(double arrayinicio[], int &tam1, double arrayfin[]){
   int j = 0;
-  for(int i=0; i<*tam1-1;i++){ // recorro el vector desde el principio hasta 1 menos
+  for(int i=0; i<tam1-1;i++){ // recorro el vector desde el principio hasta 1 menos
     if(arrayinicio[i] != arrayinicio[i+1]){ // si no coinciden
       arrayfin[j] = arrayinicio[i]; // guardas el valor en el array final
       j++;
     }
   }
-  arrayfin[j] = arrayinicio[*tam1-1]; // guarda el ultimo
-  *tam1 = j+1;
+  arrayfin[j] = arrayinicio[tam1-1]; // guarda el ultimo
+  tam1 = j+1;
 }

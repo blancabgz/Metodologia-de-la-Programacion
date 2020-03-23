@@ -1,4 +1,4 @@
-/* EJERCICIO 1
+/* EJERCICIO 6
 Blanca Abril Gonzalez
 */
 
