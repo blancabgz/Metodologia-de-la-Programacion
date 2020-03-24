@@ -27,7 +27,7 @@ ambos objetos
 using namespace std;
 
 int main(){
-    int tam1,tam2,fila,columna;
+    int tam1,tam2,fila,columna,tamsuma=0;
     double valor;
 
     cout << "Nueva coleccion" << endl;
@@ -59,8 +59,8 @@ int main(){
     cout << endl;
     cout << "---------------------------------------------" << endl;
     Valor arraysuma[tam1+tam2];
-    combinarSuma(array1,tam1,array2,tam2,arraysuma);
-    for(int k=0;k<tam1;k++){
+    combinarSuma(array1,tam1,array2,tam2,arraysuma,tamsuma);
+    for(int k=0;k<tamsuma;k++){
       arraysuma[k].mostrar();
     }
     cout << endl;

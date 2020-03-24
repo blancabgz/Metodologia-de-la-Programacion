@@ -20,20 +20,25 @@ void pedirValores(Valor vector[], int tam){
   }
 }
 
-void combinarSuma(Valor array1[], int tam1 , Valor array2[], int tam2, Valor arrayfin[] ){
-  int contador = 0;
+void combinarSuma(Valor array1[], int tam1 , Valor array2[], int tam2, Valor arrayfin[], int &contador){
+  bool repetido = true;
   for(int j=0; j<tam1; j++){ // bucle para introducir los valores del vector 1 en el vector final suma
-    arrayfin[contador] = array1[j];
+    arrayfin[j] = array1[j];
     contador++;
   }
 
   for(int k = 0; k<tam2; k++){
-      if(arrayfin[k].getFila() == array2[k].getFila() && arrayfin[k].getColumna() == array2[k].getColumna()){
-        arrayfin[k].setValor( arrayfin[k].getValor() + array2[k].getValor());
-      }else{
-        arrayfin[k].setValor(array2[k].getValor());
+    repetido = false;
+    for(int l=0; l<contador; l++){
+      if(arrayfin[l].getFila() == array2[k].getFila() && arrayfin[l].getColumna() == array2[k].getColumna()){
+        arrayfin[l].setValor( arrayfin[l].getValor() + array2[k].getValor());
+        repetido = true;
       }
-  }
+    }
 
-
+      if(!repetido){
+        arrayfin[contador] = array2[k];
+        contador++;
+      }
+    }
 }
