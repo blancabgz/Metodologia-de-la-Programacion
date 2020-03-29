@@ -30,17 +30,27 @@ int main(){
     int tam1,tam2,fila,columna,tamsuma=0;
     double valor;
 
+    // Pedimos el numero de elementos que va a tener cada
+    // vector y creamos un vector del tamaño introducido.
     cout << "Nueva coleccion" << endl;
     cout << "¿Cuantos elementos vas a introducir? ";
     cin >> tam1;
+    if(tam1 == 0){
+      cout << "No se puede introducir este valor" << endl;
+      return 0;
+    }
     Valor array1[tam1];
-    pedirValores(array1,tam1);
+    pedirValores(array1,tam1);   //pedimos los valores al usuario
 
     cout << "Nueva coleccion" << endl;
     cout << "¿Cuantos elementos vas a introducir? ";
     cin >> tam2;
+    if(tam2 == 0){
+      cout << "No se puede introducir este valor" << endl;
+      return 0;
+    }
     Valor array2[tam2];
-    pedirValores(array2,tam2);
+    pedirValores(array2,tam2);     // pedimos los valores al usuario
 
     cout << "--------------- CASO PRUEBA ---------------" << endl;
     for(int j=0;j<tam1;j++){

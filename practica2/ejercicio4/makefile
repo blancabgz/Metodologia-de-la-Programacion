@@ -7,12 +7,12 @@ all: $(BIN)/ejercicio4
 
 # Ejecutables
 $(BIN)/ejercicio4: $(OBJ)/ejercicio4.o $(OBJ)/utilidades.o
-	g++ -o $(BIN)/ejercicio4 $(OBJ)/ejercicio4.o $(OBJ)/utilidades.o
+	g++ -o $(BIN)/ejercicio4 $(OBJ)/ejercicio4.o $(OBJ)/utilidades.o -g
 
 # Objetos
 
 $(OBJ)/utilidades.o: $(SRC)/utilidades.cpp $(INC)/utilidades.h
-	g++ -c -o $(OBJ)/utilidades.o $(SRC)/utilidades.cpp -I$(INC)
+	g++ -c -o $(OBJ)/utilidades.o $(SRC)/utilidades.cpp -I$(INC) -g
 
 $(OBJ)/ejercicio4.o: $(SRC)/ejercicio4.cpp $(INC)/utilidades.h
-	g++ -c -o $(OBJ)/ejercicio4.o $(SRC)/ejercicio4.cpp -I$(INC)
+	g++ -c -o $(OBJ)/ejercicio4.o $(SRC)/ejercicio4.cpp -I$(INC) -g

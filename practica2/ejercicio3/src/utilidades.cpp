@@ -2,6 +2,10 @@
 #include <iostream>
 using namespace std;
 
+
+// Funcion de tipo void que pide los valores al usuario
+// y los guarda en el vector.
+
 void introducirValores(double array[], int tam){
   double valor;
   for(int i=0;i<tam;i++){
@@ -16,6 +20,8 @@ void introducirValores(double array[], int tam){
   }
 }
 
+// Funcion que se ocupa de mostrar los datos del vector
+
 void mostrarDatos(double array[], int tam){
   for(int j = 0; j<tam;j++){
     cout << array[j] << " " ;
@@ -23,20 +29,24 @@ void mostrarDatos(double array[], int tam){
   cout << endl;
 }
 
+// Funcion que ordena los datos de un vector
+
 void ordenarDatos(double array[], int tam){
   float temporal;
   int aux;
-
   for(int i=0;i<tam; i++){ // recorre todas las posiciones
     for(int j=0; j<tam-1; j++){ // comparar
         if(array[j] > array[j+1]){
           temporal = array[j]; // guardas en una variable auxiliar el mayor
-          array[j] = array[j+1];
-          array[j+1] = temporal;
+          array[j] = array[j+1]; // mueves el valor menor de sitio
+          array[j+1] = temporal; // guardas el valor en el sitio posterior de la variable auxiliar
         }
       }
     }
 }
+
+// Funcion que recorre un vector arrayinicio y guarda en
+// otro vector arrayfin los valores que no se repiten
 
 void eliminarRepetidos(double arrayinicio[], int &tam1, double arrayfin[]){
   int j = 0;

@@ -2,6 +2,9 @@
 #include <iostream>
 using namespace std;
 
+// Funcion que recorre la matriz y va pidiendole valores al usuario
+// y los guarda en la fila y columna indicadas
+
 
 void introducirValores(double matriz[][COL],int filas, int columnas){
   double valor;
@@ -14,7 +17,9 @@ void introducirValores(double matriz[][COL],int filas, int columnas){
   }
 }
 
-void sumarMatrices(double matrizRes[][COL],double matriz1[][COL], int fila1, int col1, double matriz2[][COL],int fila2, int col2){
+// Funcion que se encarga de hacer el producto de ambas matrices y guardarla en una matriz resultado
+
+void productoMatrices(double matrizRes[][COL],double matriz1[][COL], int fila1, int col1, double matriz2[][COL],int fila2, int col2){
   matriz1[fila1][col1];
   matriz2[fila2][col2];
 

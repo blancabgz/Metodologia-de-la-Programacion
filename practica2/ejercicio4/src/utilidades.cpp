@@ -3,19 +3,24 @@
 #include <cstring>
 using namespace std;
 
-int localizarCadenaRepetida(char cadenapp[], char subcad[]){
-  int posicion = 0;
-  int contador = 0;
-  bool encontrado = false;
+// Funcion que se encarga de localizar la cadena que se repite dentro de la principal.
 
-  for(int i=0; i<strlen(cadenapp); i++){
-    if(cadenapp[i] == subcad[contador]){
-      contador++;
-      if(encontrado == false){
-        posicion = i;
+bool localizarCadenaRepetida(char cadenapp[], char subcad[], int &posicion){
+  bool diferencia = false;
+  bool subcadena = false;
+
+  for(int i=0; i<strlen(cadenapp) && !subcadena; i++ ){ // recorremos la cadena principal
+    if(cadenapp[i] == subcad[0]){ // si una parte de la cadena principal coincide con la primera posicion de la subcadena
+      posicion = i; // guarda la posicion
+      diferencia = false;
+      for(int j=0; j<strlen(subcad) && !diferencia;j++){ // recorre la subcadena para ver si coincide todo
+        subcadena = true;
+        if(subcad[j] != cadenapp[i+j]){ // si hay alguna diferencia, vuelve a empezar
+          subcadena = false;
+          diferencia = true;
+        }
       }
-      encontrado = true;
     }
   }
-  return posicion;
+  return subcadena;
 }
