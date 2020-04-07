@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-void introducirValores(double array[], int tam){
+void introducirValores(double *array, int tam){
   double valor;
   for(int i=0;i<tam;i++){
     if(i < tam-1){
@@ -34,12 +34,12 @@ void ordenarVectorPunteros(double **ptr_vector, int tam){
   }
 }
 
-void mostrarDatosVector(double array[], int tam, double **ptr_vector){
+void mostrarDatosVector(double *array, int tam, double **ptr_vector){
   for(int i=0; i<tam; i++){
     cout << array[i] << " ";
   }
   cout << endl;
-  
+
   for(int j=0; j<tam; j++){
     cout << **(ptr_vector+j)<< " ";
   }
