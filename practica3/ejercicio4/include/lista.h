@@ -5,9 +5,35 @@
 
 using namespace std;
 
-struct Celda{
-    double info;
+class Celda{
+  private:
     Celda *sig;
+    double info;
+  public:
+    Celda(){
+      sig = 0;
+      info = 0;
+    }
+
+    Celda(double info, Celda * sig){
+      this->sig = sig;
+      this->info = info;
+    }
+
+    void setSig(Celda *sig){
+      this->sig = sig;
+    }
+    void setValor(double info){
+      this->info = info;
+    }
+    Celda * getSig(){
+      return sig;
+    }
+
+    double getValor(){
+      return info;
+    }
+
 };
 
 class Lista{
@@ -15,44 +41,17 @@ class Lista{
     Celda *contenido;
   public:
     Lista(){
-      contenido=0;
+      contenido = 0;
     }
-
-    void anadirCelda(double info){
-      Celda *cel; // creo puntero a una Celda
-      if(this->contenido){ //lista tiene algo
-        cel = this->contenido;
-        while(cel->sig != 0){ // mientras el puntero siguiente sea distinto de nulo
-          cel = cel->sig; // puntero cel apunta al siguiente
-        }
-        cel->sig = new Celda;
-        cel = cel->sig;
-      }else{ //lista vacia
-        this->contenido = new Celda();
-        cel = this -> contenido;
-      }
-      cel->info = info; // le paso el contenido
-      cel->sig = 0; // puntero siguiente a null
-    }
-
-    int mostrar(int num_celda){
-      Celda *cel;
-      cel = this->contenido;
-      for(int i=0; i<num_celda && cel != 0;i++){
-        cel = cel->sig;
-      }
-      return cel->info;
-    }
-
-    void mostrar(){
-      Celda *cel;
-      cel = this->contenido;
-      while(cel != 0){
-        cout << cel->info << " -> ";
-        cel = cel->sig;
-      }
-    }
-
+    int mostrar(int num_celda);
+    void mostrar();
+    void agregarFinal(double info);
+    int obtenerLongitud();
+    void eliminarFinal();
+    void agregarInicio(double info);
+    void agregarPosicion(int posicion, double info);
+    void liberarEspacio();
+    Celda* obtener(int num_celda);
 };
 
 
