@@ -120,7 +120,6 @@ void Lista::liberarEspacio(){
     delete cel->getSig();
     cel->setSig(0);
   }
-  cout << cel->getValor() << endl;
   this->contenido = 0;
 }
 
