@@ -16,6 +16,14 @@ Matriz::Matriz(int filas, int columnas){
   }
 }
 
+int Matriz:: getFilas(){
+  return filas;
+}
+
+int Matriz::getColumnas(){
+  return columnas;
+}
+
 // Funcion para introducir valores en la fila y la columna
 void Matriz::introducirValores(int fila, int columna, int valor){
   if(fila < this->filas && columna < this->columnas){

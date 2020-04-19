@@ -12,6 +12,8 @@ class Matriz{
     int **valores;
   public:
     Matriz(int filas, int columnas);
+    int getFilas();
+    int getColumnas();
     void introducirValores(int fila, int columna, int valor);
     void mostrarMatriz();
     Matriz * copiarMatriz();

@@ -53,7 +53,7 @@ int main(){
   cout << "Lista con longitud " <<  lista.obtenerLongitud() << endl;
 
   // añadir un elemento en la posicion que se pida
-  cout << "Introduce la posicion en la que quieres insertar un elemento: ";
+  cout << "Introduce la posicion en la que quieres insertar un elemento (ten en cuenta que el primer elemento esta en la posicion 0): ";
   cin >> posElem;
   cout << "Introduce un valor para meter en la posicion " << posElem << ": ";
   cin >> num;
@@ -82,7 +82,7 @@ int main(){
   }
 
   // obtener un elemento de la lista.
-  cout << "Introduce la posicion a buscar:";
+  cout << "Introduce la posicion a buscar(ten en cuenta que el primer elemento esta en la posicion 0):";
   cin >> busca1;
   if(busca1 > lista.obtenerLongitud() || busca1 < 0){
     cout << "No puedes buscar un valor en la posicion " << busca1 << endl;
