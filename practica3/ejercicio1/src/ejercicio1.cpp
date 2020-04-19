@@ -1,3 +1,7 @@
+/**
+BLANCA ABRIL GONZÁLEZ GRUPO E3
+Ejercicio 1
+**/
 #include <iostream>
 #include "utilidades.h"
 using namespace std;

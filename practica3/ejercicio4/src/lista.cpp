@@ -1,8 +1,10 @@
 #include <iostream>
 #include <cmath>
 #include "lista.h"
+#include "celda.h"
 using namespace std;
 
+// funcion para mostrar una celda de la lista (control main de que no meta numero mayor la longitud de la lista)
 int Lista::mostrar(int num_celda){
   Celda *cel;
   cel = this->contenido;
@@ -12,6 +14,7 @@ int Lista::mostrar(int num_celda){
   return cel->getValor(); // retorna el contenido de la celda
 }
 
+// funcion para mostrar el contenido de la lista
 void Lista::mostrar(){
   Celda *cel;
   cel = this->contenido;
@@ -25,6 +28,7 @@ void Lista::mostrar(){
   cout << endl;
 }
 
+// funcion para añadir un elemento al final de la lista
 void Lista::agregarFinal(double info){
   Celda *cel; // creo puntero a una Celda
   if(this->contenido){ //lista tiene algo
@@ -42,17 +46,19 @@ void Lista::agregarFinal(double info){
   cel->setSig(0); // puntero siguiente a null
 }
 
+// funcion para obtener la longitud de la lisra
 int Lista::obtenerLongitud(){
   int contador = 0;
   Celda *cel; // creo un puntero tipo celda
   cel = this->contenido;
   while(cel != 0){
-    contador++;
+    contador++; // aumento en contador
     cel = cel->getSig();
   }
   return contador;
 }
 
+// funcion que elimina un elemento del final de la lista
 void Lista::eliminarFinal(){
   Celda *cel;
   if(this->contenido){
@@ -65,6 +71,7 @@ void Lista::eliminarFinal(){
   }
 }
 
+// funcion que añade un elemento al inicio de la lista
 void Lista::agregarInicio(double info){
   Celda *cel;
   cel = new Celda();
@@ -74,6 +81,7 @@ void Lista::agregarInicio(double info){
   cel = 0;
 }
 
+// funcion que agrega un valor en la posicion introducida por el usuario
 void Lista::agregarPosicion(int posicion, double info){
   Celda *cel,*aux;
   aux = this->contenido;
@@ -88,6 +96,7 @@ void Lista::agregarPosicion(int posicion, double info){
   aux = 0;
 }
 
+// funcion que borra el contenido de la lista
 void Lista::liberarEspacio(){
   Celda *cel;
   while(obtenerLongitud() > 1){
@@ -98,10 +107,10 @@ void Lista::liberarEspacio(){
     delete cel->getSig();
     cel->setSig(0);
   }
-  cout << cel->getValor() << endl;
   this->contenido = 0;
 }
 
+// funcion que obtiene un puntero al numero de celda introducida por el usuario
 Celda* Lista::obtener(int num_celda){
   Celda *cel;
   cel = 0;

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include "lista.h"
+#include "celda.h"
 using namespace std;
 
 int Lista::mostrar(int num_celda){
@@ -12,18 +13,39 @@ int Lista::mostrar(int num_celda){
   return cel->getValor(); // retorna el contenido de la celda
 }
 
-void Lista::mostrar(){
-  Celda *cel;
-  cel = this->contenido;
-  while(cel != 0){
-    cout << cel->getValor();
-    if(cel->getSig() != 0){
-      cout << " -> ";
-    }
-    cel = cel->getSig();
+void Lista::mostrar(Celda *cel, int num){
+  if(num == 0){
+    cel = this->contenido;
   }
-  cout << endl;
+  if(cel->getSig() != 0){
+    cout << cel->getValor() << " -> ";
+    cel = cel->getSig();
+    mostrar(cel,1);
+  }else{
+    cout << cel->getValor() << endl;
+  }
 }
+
+void Lista::mostrarInversa(Celda *cel, int num){
+  bool primera = true;
+  if(num == 0){
+    cel = this->contenido;
+    mostrarInversa(cel,1); // imprimir la posicion 0
+    cout << cel->getValor();
+    primera = false;
+  }
+  if(cel->getSig() != 0 && primera){ // llama a la funcion mientras el siguiente no sea nulo y no sea el ultimo(pos 0)
+    cel = cel->getSig();
+    mostrarInversa(cel,1); // le pasa el siguiente
+    cout << cel->getValor() << flush; // imprime valor
+    if(num != 0){
+      cout << " -> " << flush;
+    }else{
+      cout << endl;
+    }
+  }
+}
+
 
 void Lista::agregarFinal(double info){
   Celda *cel; // creo puntero a una Celda
