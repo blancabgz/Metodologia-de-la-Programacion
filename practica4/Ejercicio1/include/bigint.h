@@ -21,6 +21,7 @@ class BigInt{
 
     inline void liberarMemoria(){
       delete[] datos; // libera el puntero a datos
+      datos = NULL;
       this->tam = 0;
     }
 

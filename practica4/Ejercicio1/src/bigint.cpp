@@ -52,6 +52,21 @@ BigInt BigInt::sumarBigInt(BigInt &objeto2){
     acarreo = (this->datos[i] + objeto2.datos[i] + acarreo) / 10;
   }
 
+  if(acarreo != 0){
+    int * vector_redimension = new int [tamano + 1];
+
+    for(int j = 0; j < tamano; j++){
+      vector_redimension[j] = objetosuma.datos[j];
+    }
+
+    tamano++;
+    vector_redimension[tamano - 1] = acarreo;
+
+    objetosuma.liberarMemoria();
+    objetosuma.datos = vector_redimension;
+    objetosuma.tam = tamano;
+  }
+
   return objetosuma;
 }
 
