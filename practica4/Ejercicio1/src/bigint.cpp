@@ -10,6 +10,11 @@ BigInt::BigInt(){
   reservarMemoria();
 }
 
+BigInt::BigInt(int num){
+  this->tam = num;
+  reservarMemoria();
+}
+
 BigInt::BigInt(int num, char * datosuser){
   this->tam = num;
   reservarMemoria();
@@ -19,12 +24,39 @@ BigInt::BigInt(int num, char * datosuser){
 }
 
 BigInt::BigInt(const BigInt &objacopiar){
-  
+  this->tam = objacopiar.tam;
+  if(this->tam > 0){
+    this->datos = new int[tam];
+    for(int i=0; i<tam; i++){
+      datos[i] = objacopiar.datos[i];
+    }
+  }
 
 }
 
+BigInt BigInt::sumarBigInt(BigInt &objeto2){
+  int tamano;
+  int acarreo = 0;
+  if(this->tam > objeto2.tam){
+    tamano = this->tam;
+  }else if(this->tam < objeto2.tam){
+    tamano = objeto2.tam;
+  }else{
+    tamano = this->tam;
+  }
+
+  BigInt objetosuma(tamano);
+
+  for(int i = 0; i<tamano; i++){
+    objetosuma.datos[i] = (this->datos[i] + objeto2.datos[i] + acarreo) % 10 ;
+    acarreo = (this->datos[i] + objeto2.datos[i] + acarreo) / 10;
+  }
+
+  return objetosuma;
+}
+
 void BigInt::mostrar(){
-  for(int i=0; i<tam; i++){
+  for(int i=tam - 1 ; i>=0; i--){
     cout << datos[i] << " ";
   }
   cout << endl;

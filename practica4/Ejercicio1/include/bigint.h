@@ -28,17 +28,25 @@ class BigInt{
     // constructor por defecto
     BigInt();
 
+    BigInt(int num);
+
     // constructor con parametro
     BigInt(int num, char * datosuser);
 
+    // constructor por copia
     BigInt(const BigInt &objacopiar);
 
     // destructor
-
     ~BigInt();
+
+    //sumar dos objetos de la clase
+    BigInt sumarBigInt(BigInt &objeto2);
 
     // mostrar los elementos del vector
     void mostrar();
+
+
+
 
 };
 

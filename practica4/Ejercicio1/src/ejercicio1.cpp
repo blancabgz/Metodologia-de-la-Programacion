@@ -15,14 +15,28 @@ int main(){
  cin >> p;
  len = strlen(p);
 
- // creo un objeto BigInt por defecto
- BigInt obj;
- obj.mostrar();
-
- // creo un objeto con el numero introducido por teclado
  BigInt objnum(len,p);
  objnum.mostrar();
+
+ // creo un objeto BigInt por defecto
+ // BigInt obj;
+ // obj.mostrar();
+
+ // otro objeto2
+
+ cout << "Introduce un numero:";
+ cin >> p;
+ len = strlen(p);
+ BigInt obj3(len,p);
+ obj3.mostrar();
+
+ // creo un objeto con el numero introducido por teclado
+
  BigInt obj2(objnum);
+
+ BigInt objetosuma = objnum.sumarBigInt(obj3);
+
+ objetosuma.mostrar();
 
 
 }
