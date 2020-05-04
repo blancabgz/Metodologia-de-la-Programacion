@@ -11,8 +11,8 @@ int main(){
 
  // creo un objeto BigInt por defecto
  BigInt obj;
- cout << "Objeto por defecto" << endl;
- obj.mostrar();
+ cout << "Objeto por defecto es: ";
+ cout << obj;
 
  cout << "---------------------------------------" << endl;
 
@@ -24,13 +24,14 @@ int main(){
  len = strlen(p);
 
  BigInt objnum(len,p);
- objnum.mostrar();
+ cout << objnum;
+
 
  // creo un objeto por constructor por copia
 
  BigInt objcopia(objnum);
- cout << "Numero copiado " << endl;
- objcopia.mostrar();
+ cout << "Numero copiado: ";
+ cout << objcopia;
 
 
  // otro objeto2
@@ -39,14 +40,14 @@ int main(){
  cin >> p;
  len = strlen(p);
  BigInt obj3(len,p);
- obj3.mostrar();
+ cout << obj3;
 
 
  // suma dos objetos
 
  BigInt objetosuma = objnum.sumarBigInt(obj3);
- cout << "Suma " << endl;
- objetosuma.mostrar();
+ cout << "Suma es igual a  ";
+ cout << objetosuma;
 
 
 }

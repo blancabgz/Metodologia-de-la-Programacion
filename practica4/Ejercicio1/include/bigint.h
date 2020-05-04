@@ -26,6 +26,8 @@ class BigInt{
     }
 
   public:
+    friend ostream & operator << (ostream &os, const BigInt &bi);
+
     // constructor por defecto
     BigInt();
 

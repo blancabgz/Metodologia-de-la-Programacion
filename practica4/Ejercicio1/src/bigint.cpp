@@ -70,11 +70,14 @@ BigInt BigInt::sumarBigInt(BigInt &objeto2){
   return objetosuma;
 }
 
-void BigInt::mostrar(){
-  for(int i=tam - 1 ; i>=0; i--){
-    cout << datos[i] << " ";
+
+ostream & operator << (ostream &os, const BigInt &bi){
+  os << endl;
+  for(int i = bi.tam - 1; i >= 0; i--){
+    os << bi.datos[i] << " ";
   }
-  cout << endl;
+  os << endl;
+  return os;
 }
 
 BigInt::~BigInt(){
