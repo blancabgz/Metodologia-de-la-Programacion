@@ -11,8 +11,8 @@ Punto::Punto(){
 
 // constructor por parametro
 Punto::Punto(int x, int y){
-    x = 0;
-    y = 0;
+  this->x = x;
+  this->y = y;
 }
 
 // actualizar coordenada x

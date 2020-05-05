@@ -19,6 +19,19 @@ Polilinea::Polilinea(int num){
     reservarMemoria();
 }
 
+// constructor copiar
+
+Polilinea::Polilinea(const Polilinea &objcopia){
+  this->num = objcopia.num;
+  if(this->num > 0){
+    this->p = new Punto[this->num];
+    for(int i=0; i<this->num; i++){
+      this->p[i] = objcopia.p[i];
+    }
+  }
+
+}
+
 // destructor
 Polilinea::~Polilinea(){
   liberarMemoria();
@@ -29,15 +42,21 @@ void Polilinea::agregarPunto(Punto punto){
     this->p[posUtil] = punto;
     posUtil++;
   }else{
-    Punto arrayaux[this->num + 1];
+    Punto * arrayaux =  new Punto[this->num + 1];
     for(int i = 0; i < this->num; i++){
-      arrayaux[i] = this->p[i];
+       arrayaux[i] = this->p[i];
     }
+
     delete[] p;
     this->p = arrayaux;
     this->p[this->num] = punto;
     this->num = this->num + 1;
     posUtil++;
   }
+}
 
+void Polilinea::mostrar(){
+  for(int i = 0; i < this->num; i++){
+    cout << "Coordenada X = " << this->p[i].getX() << " Coordenada Y = " << this->p[i].getY() << endl;
+  }
 }

@@ -1,0 +1,11 @@
+Para añadir algo:
+
+1. Creamos un array con el tamaño y vamos metiendo
+2. Si tenemos que redimensionar:
+  creamos un array auxiliar con un tamaño mas(BLANCA CUIDADO CON EL TIPO DEL ARRAY)
+  copiamos lo del array principal en el nuevo.
+  borramos haciendo delete[] p
+  ponemos el this-> al nuevo vector --> ejemplo: this->p = arrayaux;
+  en la ultima posicion this->tam guardamos lo que queramps --> ejemplo: this->p[this->num] = punto;
+  y despues aumentamos el tamaño--> this->tam = this->tam+1;
+Y ya te puedes ir

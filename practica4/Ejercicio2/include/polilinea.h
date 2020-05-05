@@ -25,11 +25,14 @@ class Polilinea{
       p = NULL;
       this->num = 0;
     }
+    
   public:
-    Polilinea();
-    Polilinea(int num);
-    ~Polilinea();
+    Polilinea(); // constructor por defecto
+    Polilinea(int num); // constructor por parametro
+    Polilinea(const Polilinea &objcopia); // constructor copia
+    ~Polilinea(); // destructor
     void agregarPunto(Punto punto);
+    void mostrar();
 };
 
 #endif
