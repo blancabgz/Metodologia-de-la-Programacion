@@ -46,7 +46,7 @@ void Lista::agregarFinal(double info){
   cel->setSig(0); // puntero siguiente a null
 }
 
-// funcion para obtener la longitud de la lisra
+// funcion para obtener la longitud de la lista
 int Lista::obtenerLongitud(){
   int contador = 0;
   Celda *cel; // creo un puntero tipo celda

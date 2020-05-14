@@ -29,7 +29,6 @@ Polilinea::Polilinea(const Polilinea &objcopia){
       this->p[i] = objcopia.p[i];
     }
   }
-
 }
 
 // destructor

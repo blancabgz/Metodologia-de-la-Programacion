@@ -25,7 +25,7 @@ class Polilinea{
       p = NULL;
       this->num = 0;
     }
-    
+
   public:
     Polilinea(); // constructor por defecto
     Polilinea(int num); // constructor por parametro
