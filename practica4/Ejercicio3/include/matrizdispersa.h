@@ -17,7 +17,7 @@ class MatrizDispersa{
     MatrizDispersa(int nfilas, int ncolumnas, Valor * valores, int numeroValores);
     ~MatrizDispersa();
     MatrizDispersa(const MatrizDispersa &objcopia);
-    MatrizDispersa(int * vectorfilas, int * vectorcolum, double * vectorvalores);
+    MatrizDispersa(const int * vectorfilas, const int * vectorcolum, const double * vectorvalores);
 };
 
 #endif

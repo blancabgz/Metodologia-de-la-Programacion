@@ -12,16 +12,16 @@ $(BIN)/ejercicio3: $(OBJ)/ejercicio3.o $(OBJ)/utilidades.o $(OBJ)/matrizdispersa
 #Objetos
 
 $(OBJ)/ejercicio3.o: $(SRC)/ejercicio3.cpp $(INC)/matrizdispersa.h $(INC)/valor.h
-	g++ -c -o $(OBJ)/ejercicio3.o -I$(INC) $(SRC)/ejercicio3.cpp
+	g++ -c -o $(OBJ)/ejercicio3.o -I$(INC) $(SRC)/ejercicio3.cpp -g
 
 $(OBJ)/valor.o:$(SRC)/valor.cpp $(INC)/valor.h
-	g++ -c -o $(OBJ)/valor.o -I$(INC) $(SRC)/valor.cpp
+	g++ -c -o $(OBJ)/valor.o -I$(INC) $(SRC)/valor.cpp -g
 
 $(OBJ)/matrizdispersa.o:$(SRC)/matrizdispersa.cpp $(INC)/matrizdispersa.h
-	g++ -c -o $(OBJ)/matrizdispersa.o -I$(INC) $(SRC)/matrizdispersa.cpp
+	g++ -c -o $(OBJ)/matrizdispersa.o -I$(INC) $(SRC)/matrizdispersa.cpp -g
 
 $(OBJ)/utilidades.o: $(SRC)/utilidades.cpp $(INC)/utilidades.h
-	g++ -c -o $(OBJ)/utilidades.o	-I$(INC) $(SRC)/utilidades.cpp
+	g++ -c -o $(OBJ)/utilidades.o	-I$(INC) $(SRC)/utilidades.cpp -g
 
 clean:
 	rm $(OBJ)/* $(BIN)/*

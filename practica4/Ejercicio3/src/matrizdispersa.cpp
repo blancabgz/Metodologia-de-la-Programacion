@@ -7,7 +7,7 @@ using namespace std;
 MatrizDispersa::MatrizDispersa(){
   this->nfilas = 0;
   this->ncolumnas = 0;
-  this->valores = 0;
+  this->valores = nullptr;
   this->numeroValores = 0;
 }
 
@@ -22,8 +22,10 @@ MatrizDispersa::~MatrizDispersa(){
   this->nfilas = 0;
   this->ncolumnas = 0;
   this->numeroValores = 0;
-  delete[] valores;
-  valores = NULL;
+  if(valores != nullptr){
+    delete[] valores;
+    valores = nullptr;
+  }
 }
 
 MatrizDispersa::MatrizDispersa(const MatrizDispersa &objcopia){
@@ -35,23 +37,28 @@ MatrizDispersa::MatrizDispersa(const MatrizDispersa &objcopia){
   }
 }
 
-MatrizDispersa::MatrizDispersa(int * vectorfilas, int * vectorcolum, double * vectorvalores){
-  int numerofil, numerocol, numeroval;
-  for(int i = 0; vectorfilas[i] < 0; i++){
+MatrizDispersa::MatrizDispersa(const int * vectorfilas, const int * vectorcolum, const double * vectorvalores){
+
+  int numerofil = 0, numerocol = 0, numeroval = 0;
+  for(int i = 0; vectorfilas[i] != -15; i++){
     numerofil++;
   }
 
-  for(int j = 0; vectorcolum[j] < 0; j++){
+  for(int i = 0; vectorcolum[i] != -15; i++){
     numerocol++;
   }
 
-  for(int k = 0; vectorvalores[k] < 0; k++){
+  for(int i = 0; vectorvalores[i] != -15; i++){
     numeroval++;
   }
 
   this->nfilas = numerofil;
   this->ncolumnas = numerocol;
   this->numeroValores = numeroval;
+  this->valores = new Valor[numeroval];
 
-
+  for(int i = 0; i < numeroval; i++){
+    Valor valorsig(vectorfilas[i],vectorcolum[i],vectorvalores[i]);
+    this->valores[i] = valorsig;
+  }
 }

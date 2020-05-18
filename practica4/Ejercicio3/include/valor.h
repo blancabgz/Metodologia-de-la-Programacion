@@ -15,10 +15,10 @@ class Valor{
     Valor(int fila, int columna, double valor);
     void setFila(int fila);
     void setColumna(int columna);
-    void setValor(int valor);
+    void setValor(double valor);
     int getFila();
     int getColumna();
-    int getValor();
+    double getValor();
 
 };
 

@@ -12,7 +12,7 @@ Valor::Valor(){
 Valor::Valor(int fila, int columna, double valor){
   this->fila = fila;
   this->columna = columna;
-  this->valor;
+  this->valor = valor;
 }
 
 void Valor::setFila(int fila){
@@ -23,7 +23,7 @@ void Valor::setColumna(int columna){
   this->columna =  columna;
 }
 
-void Valor::setValor(int valor){
+void Valor::setValor(double valor){
   this->valor = valor;
 }
 
@@ -35,6 +35,6 @@ int Valor::getColumna(){
   return this->columna;
 }
 
-int Valor::getValor(){
+double Valor::getValor(){
   return this->valor;
 }
