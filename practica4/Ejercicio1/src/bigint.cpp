@@ -19,7 +19,7 @@ BigInt::BigInt(int num, char * datosuser){
   this->tam = num;
   reservarMemoria();
   for(int i=0; i<tam; i++){
-    datos[i] = (int)(datosuser[(tam-1) - i]) - (int) '0'; // coge el tamaño - 1  y le va restando i, de esa manera se guarda al contrario
+    this->datos[i] = (int)(datosuser[(tam-1) - i]) - (int) '0'; // coge el tamaño - 1  y le va restando i, de esa manera se guarda al contrario
   }
 }
 

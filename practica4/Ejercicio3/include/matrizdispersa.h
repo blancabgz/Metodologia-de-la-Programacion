@@ -13,11 +13,13 @@ class MatrizDispersa{
     Valor *valores; // array los valores
     int numeroValores; // numero de valores
   public:
+    friend ostream & operator << (ostream &os, const MatrizDispersa &md);
     MatrizDispersa();
     MatrizDispersa(int nfilas, int ncolumnas, Valor * valores, int numeroValores);
     ~MatrizDispersa();
     MatrizDispersa(const MatrizDispersa &objcopia);
     MatrizDispersa(const int * vectorfilas, const int * vectorcolum, const double * vectorvalores);
+    MatrizDispersa operator + (const MatrizDispersa &md);
 };
 
 #endif

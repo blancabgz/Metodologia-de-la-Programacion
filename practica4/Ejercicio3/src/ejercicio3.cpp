@@ -12,26 +12,28 @@ int main(){
   ncolumna = 0;
   tam = 5;
 
-  // cout << "Introduce el numero de valores significativos: ";
-  // cin >> numeroValores;
-  //
-  // Valor * valores = new Valor[numeroValores];
-  //
-  // for(int i = 0; i < numeroValores; i++){
-  //   cout << "Introduce la fila: ";
-  //   cin >> fila;
-  //   nfila++;
-  //   cout << "Introduce la columna: ";
-  //   cin >> columna;
-  //   ncolumna++;
-  //   cout << "Introduce un valor: ";
-  //   cin >> valor;
-  //   Valor valorsig(fila,columna,valor);
-  //   valores[i] = valorsig;
-  // }
+  cout << "Introduce el numero de valores significativos: ";
+  cin >> numeroValores;
+
+  Valor * valores = new Valor[numeroValores];
+
+  for(int i = 0; i < numeroValores; i++){
+    cout << "Introduce la fila: ";
+    cin >> fila;
+    nfila++;
+    cout << "Introduce la columna: ";
+    cin >> columna;
+    ncolumna++;
+    cout << "Introduce un valor: ";
+    cin >> valor;
+    Valor valorsig(fila,columna,valor);
+    valores[i] = valorsig;
+  }
 
 
-  //MatrizDispersa matriz(nfila,ncolumna,valores,numeroValores);
+  MatrizDispersa matriz1(nfila,ncolumna,valores,numeroValores);
+
+  cout << matriz1;
 
   int * filaseg = new int [tam];
   int * columnaseg = new int[tam];
@@ -51,16 +53,15 @@ int main(){
   filaseg[tam-1] = -15;
   columnaseg[tam-1] = -15;
   valorseg[tam-1] = -15;
-  
-  //
-  // for(int i = 0; i < tam - 1; i++){
-  //   cout << filaseg[i] << " ";
-  // }
 
-  MatrizDispersa matriz(filaseg, columnaseg, valorseg);
+  MatrizDispersa matriz2(filaseg, columnaseg, valorseg);
+  cout << matriz2;
+  cout << matriz1 + matriz2;
 
   delete[] filaseg;
   delete[] columnaseg;
   delete[] valorseg;
+
+
 
 }

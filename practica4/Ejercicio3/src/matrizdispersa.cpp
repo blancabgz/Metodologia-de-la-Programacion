@@ -62,3 +62,65 @@ MatrizDispersa::MatrizDispersa(const int * vectorfilas, const int * vectorcolum,
     this->valores[i] = valorsig;
   }
 }
+
+MatrizDispersa MatrizDispersa::operator + (const MatrizDispersa &md){
+  int filas, columnas, num_valores;
+  filas = this->nfilas + md.nfilas;
+  columnas = this->ncolumnas + md.ncolumnas;
+  num_valores = this->numeroValores + md.numeroValores;
+
+  Valor * sumavalor = new Valor[num_valores];
+  for(int i = 0; i < numeroValores; i++){
+    sumavalor[i] = this->valores[i];
+  }
+
+  for(int j = 0; j < md.numeroValores; j++){
+    sumavalor[j + this->numeroValores] = md.valores[j];
+  }
+
+  MatrizDispersa matriz(filas,columnas,sumavalor,num_valores);
+  return matriz;
+}
+
+
+
+ostream & operator << (ostream &os, const MatrizDispersa &md){
+  int fila = 0, columna = 0;
+  for(int i = 0; i < md.nfilas; i++){
+    if(md.valores[i].getFila() > fila){
+      fila = md.valores[i].getFila();
+    }
+  }
+
+  for(int i = 0; i < md.ncolumnas; i++){
+    if(md.valores[i].getColumna() > columna){
+      columna = md.valores[i].getColumna();
+    }
+  }
+
+  double ** matriz  = new double *[fila];
+
+  for(int i = 0; i < fila; i++){
+    matriz[i] = new double[columna];
+  }
+
+  for(int i = 0; i < fila; i++){
+    for(int j = 0; j < columna; j++){
+      matriz[i][j] = 0;
+    }
+  }
+
+
+  for(int v = 0; v < md.numeroValores; v++){
+    matriz[md.valores[v].getFila() - 1][md.valores[v].getColumna() - 1] = md.valores[v].getValor();
+  }
+
+  for(int i = 0; i < fila; i++){
+    for(int j = 0; j < columna; j++){
+      os << matriz[i][j] << " ";
+    }
+    os << endl;
+  }
+  os << endl;
+  return os;
+}

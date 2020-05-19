@@ -23,6 +23,7 @@ int main(){
  cin >> p;
  len = strlen(p);
 
+
  BigInt objnum(len,p);
  cout << objnum;
 
