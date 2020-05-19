@@ -59,3 +59,20 @@ void Polilinea::mostrar(){
     cout << "Coordenada X = " << this->p[i].getX() << " Coordenada Y = " << this->p[i].getY() << endl;
   }
 }
+
+Polilinea Polilinea::operator + (const Polilinea &pl){
+  int total;
+  total = this->num + pl.num;
+  Polilinea suma(total);
+
+  for(int i = 0; i < this->num; i++){
+    suma.p[i] = this->p[i];
+  }
+
+  for(int j = 0; j < pl.num; j++){
+    suma.p[j+this->num] = pl.p[j];
+  }
+
+  return suma;
+
+}

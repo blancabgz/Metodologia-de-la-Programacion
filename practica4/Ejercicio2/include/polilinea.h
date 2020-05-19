@@ -33,6 +33,7 @@ class Polilinea{
     ~Polilinea(); // destructor
     void agregarPunto(Punto punto);
     void mostrar();
+    Polilinea operator + (const Polilinea &pl);
 };
 
 #endif
