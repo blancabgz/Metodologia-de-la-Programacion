@@ -18,7 +18,7 @@ BigInt::BigInt(int num){
 BigInt::BigInt(int num, char * datosuser){
   this->tam = num;
   reservarMemoria();
-  for(int i=0; i<tam; i++){
+  for(int i = 0; i < tam; i++){
     this->datos[i] = (int)(datosuser[(tam-1) - i]) - (int) '0'; // coge el tamaño - 1  y le va restando i, de esa manera se guarda al contrario
   }
 }
@@ -32,6 +32,10 @@ BigInt::BigInt(const BigInt &objacopiar){
     }
   }
 
+}
+
+BigInt::~BigInt(){
+  liberarMemoria();
 }
 
 BigInt BigInt::sumarBigInt(BigInt &objeto2){
@@ -78,8 +82,4 @@ ostream & operator << (ostream &os, const BigInt &bi){
   }
   os << endl;
   return os;
-}
-
-BigInt::~BigInt(){
-  liberarMemoria();
 }
