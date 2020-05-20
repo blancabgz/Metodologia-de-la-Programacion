@@ -14,12 +14,12 @@ class MatrizDispersa{
     int numeroValores; // numero de valores
   public:
     friend ostream & operator << (ostream &os, const MatrizDispersa &md);
-    MatrizDispersa();
-    MatrizDispersa(int nfilas, int ncolumnas, Valor * valores, int numeroValores);
-    ~MatrizDispersa();
-    MatrizDispersa(const MatrizDispersa &objcopia);
-    MatrizDispersa(const int * vectorfilas, const int * vectorcolum, const double * vectorvalores);
-    MatrizDispersa operator + (const MatrizDispersa &md);
+    MatrizDispersa(); // constructor por defecto
+    MatrizDispersa(int nfilas, int ncolumnas, Valor * valores, int numeroValores); // constructor por parametro
+    ~MatrizDispersa(); // destructor
+    MatrizDispersa(const MatrizDispersa &objcopia); // constructor de copia
+    MatrizDispersa(const int * vectorfilas, const int * vectorcolum, const double * vectorvalores); // "constructor de copia"
+    MatrizDispersa operator + (const MatrizDispersa &md); // operador suma
 };
 
 #endif

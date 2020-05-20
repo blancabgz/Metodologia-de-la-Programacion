@@ -2,7 +2,6 @@
 #include <cmath>
 #include "polilinea.h"
 #include "punto.h"
-#include "utilidades.h"
 using namespace std;
 
 int main(){
@@ -13,7 +12,7 @@ int main(){
   // constructor por defecto
   Polilinea obj1(npuntos);
   cout << "Constructor por defecto: " << endl;
-  obj1.mostrar();
+  cout << obj1;
 
   cout << "Agregar Punto: " << endl;
   for(int i = 0; i < npuntos; i++){
@@ -26,7 +25,7 @@ int main(){
   }
 
   cout << "Polilinea con todos los puntos agregados: " << endl;
-  obj1.mostrar();
+  cout << obj1;
 
   // añadir puntos
   cout << "Polilinea 2: " << endl;
@@ -44,12 +43,13 @@ int main(){
   }
 
   cout << "Polilinea 2: " << endl;
-  obj2.mostrar();
+  cout << obj2;
 
   // copia objeto
   Polilinea objetocopiado(obj2);
   cout << "Objeto Copiado: " << endl;
-  objetocopiado.mostrar();
+  cout << objetocopiado;
+
 
   // añadir punto
   cout << endl;
@@ -60,13 +60,13 @@ int main(){
   cin >> puntoy;
   Punto punt(puntox, puntoy);
   obj2.agregarPunto(punt);
-  obj2.mostrar();
+  cout << obj2;
 
   cout << endl;
 
   // operador suma
   Polilinea poli = obj1 + obj2;
   cout << "Suma Polilinea 1 y Polilinea 2" << endl;
-  poli.mostrar();
+  cout << poli;
 
 }

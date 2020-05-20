@@ -2,7 +2,6 @@
 #include <cmath>
 #include "matrizdispersa.h"
 #include "valor.h"
-#include "utilidades.h"
 using namespace std;
 
 int main(){
@@ -33,12 +32,14 @@ int main(){
 
   MatrizDispersa matriz1(nfila,ncolumna,valores,numeroValores);
 
+  cout << "La matriz introducida es:" << endl;
   cout << matriz1;
 
   int * filaseg = new int [tam];
   int * columnaseg = new int[tam];
   double * valorseg = new double[tam];
 
+  cout << "Introduce una nueva matriz " << endl;
   for(int i = 0; i < tam - 1; i++){
     cout << "Introduce fila de matriz: ";
     cin >> fila;
@@ -54,8 +55,13 @@ int main(){
   columnaseg[tam-1] = -15;
   valorseg[tam-1] = -15;
 
+  // creo al matriz
   MatrizDispersa matriz2(filaseg, columnaseg, valorseg);
+  cout << "La matriz introducida es:" << endl;
   cout << matriz2;
+
+  // suma de matrices
+  cout << "La suma de las dos matrices introducidas son:" << endl;
   cout << matriz1 + matriz2;
 
   delete[] filaseg;

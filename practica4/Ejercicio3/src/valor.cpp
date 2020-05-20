@@ -3,12 +3,14 @@
 #include "matrizdispersa.h"
 using namespace std;
 
+// constructor por defecta
 Valor::Valor(){
   this->fila = 0;
   this->columna = 0;
   this->valor = 0;
 }
 
+// constructor por parametro
 Valor::Valor(int fila, int columna, double valor){
   this->fila = fila;
   this->columna = columna;

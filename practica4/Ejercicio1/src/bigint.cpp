@@ -41,6 +41,7 @@ BigInt::~BigInt(){
 BigInt BigInt::sumarBigInt(BigInt &objeto2){
   int tamano;
   int acarreo = 0;
+  // miro cual de los dos objetos tiene mayor tamaño
   if(this->tam > objeto2.tam){
     tamano = this->tam;
   }else if(this->tam < objeto2.tam){
@@ -49,18 +50,21 @@ BigInt BigInt::sumarBigInt(BigInt &objeto2){
     tamano = this->tam;
   }
 
+  // creo un objeto BigInt del tamaño calculado anteriormente
   BigInt objetosuma(tamano);
 
+  // sumo teniendo el cuenta el acarreo
   for(int i = 0; i<tamano; i++){
     objetosuma.datos[i] = (this->datos[i] + objeto2.datos[i] + acarreo) % 10 ;
     acarreo = (this->datos[i] + objeto2.datos[i] + acarreo) / 10;
   }
 
+  // si llega al final y hay acarreo, redimensiono el vector a una posicion mas
   if(acarreo != 0){
     int * vector_redimension = new int [tamano + 1];
 
     for(int j = 0; j < tamano; j++){
-      vector_redimension[j] = objetosuma.datos[j];
+      vector_redimension[j] = objetosuma.datos[j]; // copio valores
     }
 
     tamano++;

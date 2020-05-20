@@ -27,6 +27,7 @@ class Polilinea{
     }
 
   public:
+    friend ostream & operator << (ostream &os, const Polilinea &pl);
     Polilinea(); // constructor por defecto
     Polilinea(int num); // constructor por parametro
     Polilinea(const Polilinea &objcopia); // constructor copia

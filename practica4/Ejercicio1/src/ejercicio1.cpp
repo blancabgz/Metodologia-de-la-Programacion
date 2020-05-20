@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cmath>
 #include "bigint.h"
-#include "utilidades.h"
 #include <string.h>
 using namespace std;
 

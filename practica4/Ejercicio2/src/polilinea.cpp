@@ -19,7 +19,7 @@ Polilinea::Polilinea(int num){
     reservarMemoria();
 }
 
-// constructor copiar
+// constructor copia
 
 Polilinea::Polilinea(const Polilinea &objcopia){
   this->num = objcopia.num;
@@ -36,30 +36,37 @@ Polilinea::~Polilinea(){
   liberarMemoria();
 }
 
+// funcion agregar punto
 void Polilinea::agregarPunto(Punto punto){
   if(posUtil < this->num){
     this->p[posUtil] = punto;
     posUtil++;
   }else{
-    Punto * arrayaux =  new Punto[this->num + 1];
+    Punto * arrayaux =  new Punto[this->num + 1]; // creo un array auxiliar para redimensionar
     for(int i = 0; i < this->num; i++){
-       arrayaux[i] = this->p[i];
+       arrayaux[i] = this->p[i]; // copio los valores
     }
 
     delete[] p;
     this->p = arrayaux;
     this->p[this->num] = punto;
-    this->num = this->num + 1;
+    this->num = this->num + 1; // aumento valor
     posUtil++;
   }
 }
 
-void Polilinea::mostrar(){
-  for(int i = 0; i < this->num; i++){
-    cout << "Coordenada X = " << this->p[i].getX() << " Coordenada Y = " << this->p[i].getY() << endl;
+
+ostream & operator << (ostream &os, const Polilinea &poli){
+  os << endl;
+  for(int i = 0; i < poli.num; i++){
+    os << "Coordenada X = " << poli.p[i].getX() << " Coordenada Y = " << poli.p[i].getY() << endl;
   }
+  os << endl;
+  return os;
 }
 
+
+// operador suma
 Polilinea Polilinea::operator + (const Polilinea &pl){
   int total;
   total = this->num + pl.num;
@@ -74,5 +81,4 @@ Polilinea Polilinea::operator + (const Polilinea &pl){
   }
 
   return suma;
-
 }

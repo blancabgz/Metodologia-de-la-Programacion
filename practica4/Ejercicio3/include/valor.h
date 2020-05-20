@@ -11,14 +11,14 @@ class Valor{
     int columna;
     double valor;
   public:
-    Valor();
-    Valor(int fila, int columna, double valor);
-    void setFila(int fila);
-    void setColumna(int columna);
-    void setValor(double valor);
-    int getFila();
-    int getColumna();
-    double getValor();
+    Valor(); // constructor por defecto
+    Valor(int fila, int columna, double valor); // constructor por parametro
+    void setFila(int fila); // establecer fila
+    void setColumna(int columna); // establecer columna
+    void setValor(double valor); //establecer valor
+    int getFila(); // obtener fila
+    int getColumna(); // obtener columna
+    double getValor(); //obtener valor
 
 };
 

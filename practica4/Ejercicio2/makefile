@@ -6,8 +6,8 @@ INC=include
 all: $(BIN)/ejercicio2
 
 # Ejecutables
-$(BIN)/ejercicio2: $(OBJ)/ejercicio2.o $(OBJ)/utilidades.o $(OBJ)/polilinea.o $(OBJ)/punto.o
-	g++ -o $(BIN)/ejercicio2 $(OBJ)/ejercicio2.o $(OBJ)/utilidades.o $(OBJ)/polilinea.o $(OBJ)/punto.o
+$(BIN)/ejercicio2: $(OBJ)/ejercicio2.o $(OBJ)/polilinea.o $(OBJ)/punto.o
+	g++ -o $(BIN)/ejercicio2 $(OBJ)/ejercicio2.o $(OBJ)/polilinea.o $(OBJ)/punto.o
 
 #Objetos
 
@@ -20,8 +20,7 @@ $(OBJ)/punto.o:$(SRC)/punto.cpp $(INC)/punto.h
 $(OBJ)/polilinea.o:$(SRC)/polilinea.cpp $(INC)/polilinea.h
 	g++ -c -o $(OBJ)/polilinea.o -I$(INC) $(SRC)/polilinea.cpp
 
-$(OBJ)/utilidades.o: $(SRC)/utilidades.cpp $(INC)/utilidades.h
-	g++ -c -o $(OBJ)/utilidades.o	-I$(INC) $(SRC)/utilidades.cpp
+
 
 clean:
 	rm $(OBJ)/* $(BIN)/*
